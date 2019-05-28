@@ -1,4 +1,5 @@
 export class Receita {
+  id: number;
   nome: string;
   descricao: string;
   tipo: string;
@@ -9,4 +10,5 @@ export class Receita {
   data: any;
   utilizador: string;
   classificacao: number;
+  imagem: string;
 }

@@ -8,6 +8,7 @@ import { LoginPartialComponent } from './login-partial/login-partial.component';
 import { InitialpageComponent } from './initialpage/initialpage.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { ReceitadetailsComponent } from './receitadetails/receitadetails.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     PortfolioComponent,
     LoginPartialComponent,
     InitialpageComponent,
+    ReceitadetailsComponent,
   ],
   imports: [
     BrowserModule,

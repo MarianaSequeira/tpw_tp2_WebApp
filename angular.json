@@ -29,7 +29,8 @@
               "src/assets/content/freelancer.min.css",
               "src/assets/content/magnific-popup.css",
               "src/assets/fontawesome-free-5.8.2-web/css/all.css",
-              "src/assets/content/all.min.css"
+              "src/assets/content/all.min.css",
+              "src/assets/content/receita.css"
             ],
             "scripts": [
               "src/assets/scripts/jquery.min.js",

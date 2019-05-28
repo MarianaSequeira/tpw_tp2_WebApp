@@ -23,9 +23,24 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/assets/content/bootstrap.min.css",
+              "src/assets/content/site.css",
+              "src/styles.css",
+              "src/assets/content/freelancer.min.css",
+              "src/assets/content/magnific-popup.css",
+              "src/assets/fontawesome-free-5.8.2-web/css/all.css",
+              "src/assets/content/all.min.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "src/assets/scripts/jquery.min.js",
+              "src/assets/scripts/bootstrap.min.js",
+              "src/assets/scripts/jquery.easing.min.js",
+              "src/assets/scripts/jquery.magnific-popup.min.js",
+              "src/assets/scripts/freelancer.min.js",
+              "src/assets/scripts/jquery-3.3.1.slim.min.js",
+              "src/assets/scripts/popper.min.js",
+              "src/assets/scripts/popoverAccount.js"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {

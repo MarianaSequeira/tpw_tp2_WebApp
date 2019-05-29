@@ -1,0 +1,95 @@
+<div class="container body-content">
+
+  <div class="row">
+    <div class="col-sm-12">
+      <h3 class="text-center text-uppercase text-secondary mb-0" style="margin-top: 4rem">{{ receita.nome }}</h3>
+      <hr class="star-dark mb-5" style="margin-top: 1.5rem">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6 align-self-center">
+      <h5 class="text-center text-uppercase text-secondary mb-0">Descrição</h5>
+      <br>
+
+      <!-- Receita.Descrição -->
+      <p align="justify">{{ receita.descricao }}
+      </p>
+    </div>
+    <div class="col-sm-6">
+
+      <!-- Receita.Imagem-->
+      <img class="img-fluid" src="http://localhost:8000{{receita.imagem}}" style="border-radius: 10px"/>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6 align-self-center" style="margin-top: 20px">
+
+      <div style="border:3px solid #18bc9c; border-radius: 10px; padding: 10px 10px 10px 10px;">
+        <h5 class="text-center text-uppercase text-secondary mb-0" style="padding-bottom: 1rem">
+          Ingredientes</h5>
+
+        <div *ngFor="let ingrediente of listIngredientes">
+          <p align="center" style="margin-bottom: 0.5rem" >
+            <i class="fas fa-angle-right" style="font-size: 15px; color: #18bc9c;"></i>
+            <b>&nbsp;&nbsp;{{ ingrediente.ingredienteName }}: </b>
+            {{ ingrediente.ingredienteQuant }}&nbsp;&nbsp;{{ ingrediente.unidade }} &nbsp;&nbsp;
+            <i class="fas fa-angle-left" style="font-size: 15px; color: #18bc9c;"></i>
+          </p>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="col-sm-6 align-self-center" style="margin-top: 20px">
+      <div style="border:3px solid #18bc9c; border-radius: 10px; padding: 10px 10px 10px 10px;">
+        <!-- Duração -->
+        <div style="padding: 5px">
+          &nbsp;<i class="fas fa-hourglass-half"
+                   style="color: #18bc9c; padding-right: 5px; font-size: 15px"></i>&nbsp; <b>Duração:</b>
+          &nbsp;{{ receita.tempo }} min
+        </div>
+
+        <!-- Receita.Dificuldade -->
+        <div style="padding: 5px">
+          <i class="fas fa-dumbbell" style="color: #18bc9c; padding-right: 5px;"></i>
+          <b>Dificuldado:</b> {{ receita.dificuldade }}
+        </div>
+
+        <!-- Dose -->
+        <div style="padding: 5px">
+          <!-- Receita.Dose -->
+          <i class="fas fa-balance-scale" style="color: #18bc9c; padding-right: 5px;"></i>
+          <b>Dose:</b> {{ receita.dose }} dose(s) {{ receita.dificuldade }}
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12 " style="margin-top: 20px; padding-top: 10px">
+      <h5 class="text-center text-uppercase text-secondary mb-0">Modo de Preparação </h5>
+      <br>
+
+      <ul class="instructions-list" style="list-style-type: none; padding-left: 0px">
+
+        <li *ngFor="let passos of listPassos" class="instruction-item" >
+          <a id="d" class="instruction-check" ng-click="name()" ></a>
+          <div class="instruction">
+            <p align="justify" style="margin-bottom: 7px; font-size: medium"
+               class="instruction-body">{{ passos }}</p>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  function name() {
+    alert("javascript text");
+  }
+</script>

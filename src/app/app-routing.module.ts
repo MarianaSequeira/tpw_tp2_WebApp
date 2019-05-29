@@ -1,21 +1,28 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {InitialpageComponent} from './initialpage/initialpage.component';
+import { InitialpageComponent } from './initialpage/initialpage.component';
 import { ReceitadetailsComponent } from './receitadetails/receitadetails.component';
+import { PesquisaComponent } from './pesquisa/pesquisa.component';
+import { TiporeceitaComponent } from './tiporeceita/tiporeceita.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ReceitastagComponent } from './receitastag/receitastag.component';
 
 
 const routes: Routes = [
   {path: '', component: InitialpageComponent},
-  {path: 'receita/:id', component: ReceitadetailsComponent}
-
-]
+  {path: 'receita/:id', component: ReceitadetailsComponent},
+  {path: 'pesquisa/:query', component: PesquisaComponent},
+  {path: 'tiporeceita/:tipo', component: TiporeceitaComponent},
+  {path: 'perfil', component: ProfileComponent},
+  {path: 'receitastag/:tag', component: ReceitastagComponent},
+];
 
 @NgModule({
   exports: [
     RouterModule
   ],
   imports: [
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})
   ]
 })
 export class AppRoutingModule { }

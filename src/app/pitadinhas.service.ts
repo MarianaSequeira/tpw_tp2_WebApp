@@ -3,10 +3,11 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Receita} from './receita';
 import {Ingrediente} from './Ingrediente';
+import {Tags} from './Tags';
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
-}
+};
 
 @Injectable({
   providedIn: 'root'
@@ -17,8 +18,8 @@ export class PitadinhasService {
 
   constructor(private http: HttpClient) { }
 
-  getReceitasMaisLikes(): Observable<Receita[]> {
-    const url = this.baseUrl + 'receitasmaislikes';
+  getReceitas(tipo: string): Observable<Receita[]> {
+    const url = this.baseUrl + 'receitatipo?tipo=' + tipo;
     return this.http.get<Receita[]>(url);
   }
 
@@ -31,4 +32,25 @@ export class PitadinhasService {
     const url = this.baseUrl + 'ingredientesreceita?id=' + id;
     return this.http.get<Ingrediente[]>(url);
   }
+
+  getReceitasUtilizador(username: string): Observable<Receita[]> {
+    const url = this.baseUrl + 'receitasutilizador?utilizador=' + username;
+    return this.http.get<Receita[]>(url);
+  }
+
+  getReceitasGuardadas(username: string): Observable<Receita[]> {
+    const url = this.baseUrl + 'receitasguardadas?utilizador=' + username;
+    return this.http.get<Receita[]>(url);
+  }
+
+  getTagsReceita(id: number): Observable<Tags[]> {
+    const url = this.baseUrl + 'tagsreceita?id=' + id;
+    return this.http.get<Tags[]>(url);
+  }
+
+  getTagsReceitas(tag: string): Observable<Receita[]> {
+    const url = this.baseUrl + 'receitastag?tag=' + tag;
+    return this.http.get<Receita[]>(url);
+  }
+
 }

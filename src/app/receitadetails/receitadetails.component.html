@@ -86,10 +86,14 @@
 
     </div>
   </div>
+
+  <div>
+    <h5 class="text-center text-uppercase text-secondary mb-0" style="margin-top: 4rem">
+      Tags
+    </h5>
+
+      <a *ngFor="let tag of listTags" routerLink="/receitastag/{{tag.nome}}" style="padding-right: 5px">{{ tag.nome }}</a>
+
+  </div>
 </div>
 
-<script>
-  function name() {
-    alert("javascript text");
-  }
-</script>

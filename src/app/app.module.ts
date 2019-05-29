@@ -9,6 +9,13 @@ import { InitialpageComponent } from './initialpage/initialpage.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ReceitadetailsComponent } from './receitadetails/receitadetails.component';
+import { PesquisaComponent } from './pesquisa/pesquisa.component';
+import {ReactiveFormsModule} from '@angular/forms';
+import { TiporeceitaComponent } from './tiporeceita/tiporeceita.component';
+import { UserrecipesComponent } from './userrecipes/userrecipes.component';
+import { RecipestableComponent } from './recipestable/recipestable.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ReceitastagComponent } from './receitastag/receitastag.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +25,12 @@ import { ReceitadetailsComponent } from './receitadetails/receitadetails.compone
     LoginPartialComponent,
     InitialpageComponent,
     ReceitadetailsComponent,
+    PesquisaComponent,
+    TiporeceitaComponent,
+    UserrecipesComponent,
+    RecipestableComponent,
+    ProfileComponent,
+    ReceitastagComponent,
   ],
   imports: [
     BrowserModule,

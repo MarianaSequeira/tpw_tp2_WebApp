@@ -1,5 +1,3 @@
-import {$} from "protractor";
-
 $(document).ready(function () {
   console.log("test");
 });
@@ -13,14 +11,8 @@ $('#x').click(function () {
   }
 });
 
-$('.instruction-check').click(function () {
-  console.log("ola");
-  $(this).toggleClass("active");
-});
-
-function toggleActive(id) {
-  var element = document.getElementById(id);
-  element.toggleClass("active");
+function toggleActive(e) {
+  $(e).toggleClass("active");
 }
 
 function submitComentario() {

@@ -76,7 +76,7 @@
       <ul class="instructions-list" style="list-style-type: none; padding-left: 0px">
 
         <li *ngFor="let passos of listPassos" class="instruction-item" >
-          <a id="d" class="instruction-check" ng-click="name()" ></a>
+          <a id="d" class="instruction-check" onclick="toggleActive(this)" ></a>
           <div class="instruction">
             <p align="justify" style="margin-bottom: 7px; font-size: medium"
                class="instruction-body">{{ passos }}</p>

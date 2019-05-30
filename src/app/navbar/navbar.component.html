@@ -27,16 +27,16 @@
           </div>
         </li>
       </ul>
-      <!--
-      <form class="form-inline my-2 my-lg-0" action="." method="post">
+
+      <form class="form-inline my-2 my-lg-0" [formGroup]="searchForm" (ngSubmit)="onSubmit()">
         <div class="input-group  my-2 my-lg-0">
           <div class="input-group-prepend">
             <div class="input-group-text"><i class="fas fa-search" style="color: #18bc9c"></i></div>
           </div>
-          <input class="form-control mr-sm-2" name="query" type="search" placeholder="Search" aria-label="Search">
+          <input formControlName="query" class="form-control mr-sm-2" name="query" type="search" placeholder="Search" aria-label="Search">
         </div>
       </form>
-      -->
+
 
       <app-login-partial></app-login-partial>
     </div>

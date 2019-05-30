@@ -57,4 +57,9 @@ export class PitadinhasService {
     const url = this.baseUrl + 'addreceita';
     return this.http.post(url, receita, httpOptions);
   }
+
+  getSearchResult(query: string): Observable<Receita[]> {
+    const url = this.baseUrl + 'pesquisar?query=' + query;
+    return this.http.get<Receita[]>(url);
+  }
 }

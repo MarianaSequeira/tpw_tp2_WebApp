@@ -1,3 +1,57 @@
-<p>
-  pesquisa works!
-</p>
+<div class="container">
+
+  <p *ngIf="query === ''">Query não encontrada!</p>
+  <div *ngIf="query !== ''">
+    <h2 style="padding-top: 96px" class="text-center text-uppercase text-secondary mb-0">Resultados da pesquisa '{{ query }}'</h2>
+    <hr class="star-dark mb-5">
+    <!--Accordion
+    <div class="panel-group" id="accordion" >
+      <div class="panel panel-default" style="border:3px solid #18bc9c; border-radius: 10px; padding: 10px 10px 10px 10px;">
+        <div class="panel-heading ">
+          <h4 class="panel-title" style="margin-top: 10px">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1"><i class="fas fa-search"></i>&nbsp;&nbsp;Filtros</a>
+          </h4>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse in">
+          <form id="pesquisa" action="/pesquisa" method="POST" >
+            <div class="form-group row">
+              {% for tag in tags %}
+              {% if tag.nome in lst_tags %}
+              <div class="col-md-3 col-sm-6">
+                <div class="checkbox">
+                  <label> <input type="checkbox" name="tags" value="{{ tag.nome }}" checked>&nbsp;&nbsp;{{ tag.nome }}
+                  </label>
+                </div>
+              </div>
+              {% else %}
+              <div class="col-md-3 col-sm-6">
+                <div class="checkbox">
+                  <label> <input type="checkbox" name="tags" value="{{ tag.nome }}">&nbsp;&nbsp;{{ tag.nome }}
+                  </label>
+                </div>
+              </div>
+              {% endif %}
+              {% endfor %}
+            </div>
+            <input type="hidden" class="form-control hide" name="query" value="{{ query }}">
+            <button name="tags" type="submit" class="btn btn-primary">Filtrar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    -->
+
+
+    <!--Query result-->
+    <div class="row" style="padding: 15px 10px 10px 10px; margin-top: 18px" *ngFor="let receita of queryResult" routerLink="/receita/{{receita.id}}">
+      <div class="media">
+        <img src="http://localhost:8000{{receita.imagem}}" class="align-self-center mr-3" alt="..." style="width: 15%">
+        <div class="media-body">
+          <h5 class="mt-0">{{ receita.nome }}</h5>
+          {{ receita.descricao }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

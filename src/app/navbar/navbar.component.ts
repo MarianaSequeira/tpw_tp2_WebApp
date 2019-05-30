@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Location} from '@angular/common';
+import {PitadinhasService} from '../pitadinhas.service';
+import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +11,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  searchForm: FormGroup;
+
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private location: Location,
+    private pitadinhaService: PitadinhasService,
+    private formBuilder: FormBuilder
+  ) {
+    this.searchForm = this.formBuilder.group({
+      query: new FormControl('')
+    });
+  }
 
   ngOnInit() {
+  }
+
+  onSubmit() {
+    console.warn(this.searchForm.value.query);
+    this.router.navigate(['pesquisa'], {
+      state: { query: this.searchForm.value.query }
+    });
   }
 
 }

@@ -6,6 +6,7 @@ import { PesquisaComponent } from './pesquisa/pesquisa.component';
 import { TiporeceitaComponent } from './tiporeceita/tiporeceita.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ReceitastagComponent } from './receitastag/receitastag.component';
+import {AdicionarreceitaComponent} from './adicionarreceita/adicionarreceita.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'tiporeceita/:tipo', component: TiporeceitaComponent},
   {path: 'perfil', component: ProfileComponent},
   {path: 'receitastag/:tag', component: ReceitastagComponent},
+  {path: 'criarReceita', component: AdicionarreceitaComponent}
 ];
 
 @NgModule({

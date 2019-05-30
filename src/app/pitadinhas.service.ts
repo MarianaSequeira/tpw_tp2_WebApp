@@ -53,4 +53,8 @@ export class PitadinhasService {
     return this.http.get<Receita[]>(url);
   }
 
+  postReceita(receita: Receita): Observable<any> {
+    const url = this.baseUrl + 'addreceita';
+    return this.http.post(url, receita, httpOptions);
+  }
 }

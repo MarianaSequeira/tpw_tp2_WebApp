@@ -1,0 +1,158 @@
+<div class="container body-content">
+  <h3 class="text-center text-uppercase text-secondary mb-0" style="margin-top: 4rem">Adicionar Receita</h3>
+  <hr class="star-dark mb-5" style="margin-top: 1.5rem">
+
+
+  <form class="needs-validation regForm" [formGroup]="receitaForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+
+    <!-- Nome -->
+    <div class="form-group">
+      <h6 align="center" style="margin-bottom: 20px">Comecemos pelo mais fácil.. o NOME :)</h6>
+      <input formControlName="nomeReceita" placeholder="Nome" type="text" class="form-control" name="nome" id="nomeReceita"
+             style="width: 100%; max-width: 100%" required>
+    </div>
+
+    <!-- Descrição -->
+    <div class="form-group" style="margin-top: 60px; ">
+      <h6 align="center" style="margin-bottom: 20px">E agora, que tal uma breve descrição?</h6>
+      <textarea formControlName="descricaoReceita" placeholder="Descrição" class="form-control" name="descricao" id="descricaoReceita" rows="4"
+                style="width: 100%; max-width: 100%" required></textarea>
+    </div>
+
+    <!-- Ingrediente -->
+    <div>
+      <h6 align="center" style="margin-bottom: 35px; margin-top: 60px">Ora vamos lá a saber, do que vamos
+        precisar?</h6>
+      <div class="row form-row form-group spacer" style="width: 100%; max-width: 100%; ">
+        <div class="col-5 form-group ">
+          <label >Ingrediente:</label>
+          <input placeholder="Nome" class="form-control" type="text" name="ing-0" id="ing-0" required>
+        </div>
+        <div class="col-3 form-group ">
+          <label >Quantidade:</label>
+          <input class="form-control" type="number" name="qt-0" step="0.5" id="qt-0" required>
+        </div>
+        <div class="col-3 form-group ">
+          <label >Unidade:</label>
+          <select class="form-control" name="un-0" id="in-0" required>
+            <option value="sem unidade">unidade(s)</option>
+            <option value="mL">mL</option>
+            <option value="L">L</option>
+            <option value="g">g</option>
+            <option value="g">kg</option>
+            <option value="chávena">chávena</option>
+            <option value="colher de sopa">c. sopa</option>
+            <option value="colher de chá">c. chá</option>
+            <option value="colher de café">c. café</option>
+            <option value="qb" selected>qb</option>
+          </select>
+        </div>
+        <div class="col-1" style="padding-left: 30px; margin-top: 30px">
+          <button class="btn btn-primary add-form-row" id="0">+</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Preparação -->
+    <div class="form-group" style="margin-top: 60px; ">
+      <h6 align="center" style="margin-bottom: 20px">Diga-nos, <span style="color: #18bc9c">TIM TIM</span> por
+        <span style="color: #18bc9c">TIM TIM</span>, o que fazer!!</h6>
+      <textarea formControlName="preparacaoReceita" placeholder="1. Exemplo" class="form-control" name="passos" id="passoReceita" rows="10"
+                style="width: 100%; max-width: 100%; " required></textarea>
+    </div>
+
+    <!-- Tipo e Dificuldade -->
+    <div class="row" style="width: 100%; max-width: 100%; margin-top: 50px">
+      <div class="form-group col-6">
+        <h6 align="center" style="margin-bottom: 20px">De que tipo é a receita?</h6>
+        <div class="radio" >
+          <input formControlName="tipoReceita" type="radio" name="tipoReceita" value="Sopa" required>&nbsp;&nbsp;Sopa
+        </div>
+        <div class="radio" >
+          <input formControlName="tipoReceita" type="radio" name="tipoReceita" value="Carne" required>&nbsp;&nbsp;Carne
+        </div>
+        <div class="radio" >
+          <input formControlName="tipoReceita" type="radio" name="tipoReceita" value="Peixe" required>&nbsp;&nbsp;Peixe
+        </div>
+        <div class="radio" >
+          <input formControlName="tipoReceita" type="radio" name="tipoReceita" value="Acompanhamento" required>&nbsp;&nbsp;Acompanhamento
+        </div>
+        <div class="radio" >
+          <input formControlName="tipoReceita" type="radio" name="tipoReceita" value="Vegetariano" required>&nbsp;&nbsp;Vegetariano
+        </div>
+        <div class="radio" >
+          <input formControlName="tipoReceita" type="radio" name="tipoReceita" value="Sobremesa" required>&nbsp;&nbsp;Sobremesa
+        </div>
+        <div class="radio" >
+          <input formControlName="tipoReceita" type="radio" name="tipoReceita" value="Massas" required>&nbsp;&nbsp;Massas
+        </div>
+        <div class="radio" >
+          <input formControlName="tipoReceita" type="radio" name="tipoReceita" value="Entrada" required>&nbsp;&nbsp;Entrada
+        </div>
+      </div>
+
+      <div class="form-group col-6">
+        <h6 align="center" style="margin-bottom: 20px">.. e qual o grau de dificuldade?!</h6>
+        <div class="radio" >
+          <input formControlName="nivelReceita" type="radio" name="nivelReceita" value="Muito Fácil" required>&nbsp;&nbsp;Muito Fácil
+        </div>
+        <div class="radio" >
+          <input formControlName="nivelReceita" type="radio" name="nivelReceita" value="Fácil" required>&nbsp;&nbsp;Fácil
+        </div>
+        <div class="radio" >
+          <input formControlName="nivelReceita" type="radio" name="nivelReceita" value="Médio" required>&nbsp;&nbsp;Médio
+        </div>
+        <div class="radio" >
+          <input formControlName="nivelReceita" type="radio" name="nivelReceita" value="Difícil" required>&nbsp;&nbsp;Difícil
+        </div>
+        <div class="radio" >
+          <input formControlName="nivelReceita" type="radio" name="nivelReceita" value="Muito Difícil" required>&nbsp;&nbsp;Muito Difícil
+        </div>
+      </div>
+    </div>
+
+    <!-- Tempo e Dose -->
+    <div class="row" style="margin-top:  50px">
+      <div class="form-group col-6">
+        <h6 align="center" style="margin-bottom: 20px"><span
+          style="color: #18bc9c">"Tempo é dinheiro"</span>.. vamos aos minutos? </h6>
+        <input formControlName="tempoReceita" placeholder="Tempo(min)" style="width: 100%; max-width: 100%;" class="form-control"
+               type="number" name="tempo" id="tempo" min="0" required>
+      </div>
+      <div class="form-group col-6">
+        <h6 align="center" style="margin-bottom: 20px">Quantas doses vou eu ter?</h6>
+        <input formControlName="dosesReceita" placeholder="Nº Doses" style="width: 100%; max-width: 100%;" class="form-control"
+               type="number" name="dose" id="dose" min="0" required>
+      </div>
+    </div>
+
+    <!-- Imagem-->
+    <div class="row" style="margin-top:  50px">
+      <div class="form-group col">
+        <h6 align="center" style="margin-bottom: 20px">E como os olhos também comem.. ;) </h6>
+        <!--<input formControlName="imagemReceita" type="file" class="form-control-file" name="imagem" id="imagem" required>-->
+        <app-file-upload formControlName="imagemReceita" ></app-file-upload>
+      </div>
+    </div>
+
+    <!-- Tags-->
+    <div>
+      <h5 align="center" style="margin-top: 50px; padding-bottom: 0px">POR ÚLTIMO!</h5>
+      <h6 class="text-center text-secondary mb-0" style="margin-top: 10px;">O que é, o que é.. que?</h6>
+      <div class="form-group row" style="margin-top: 50px">
+        <div class="col-3" formArrayName="tagReceita" *ngFor="let tag of receitaForm.controls.tagReceita.controls; let i = index">
+          <div class="checkbox" >
+            <label >
+              <input [formControlName]="i" type="checkbox" >&nbsp;&nbsp;{{tagReceita[i].name}}
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Adicionar</button>
+
+
+  </form>
+
+</div>

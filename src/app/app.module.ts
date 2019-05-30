@@ -10,12 +10,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ReceitadetailsComponent } from './receitadetails/receitadetails.component';
 import { PesquisaComponent } from './pesquisa/pesquisa.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { TiporeceitaComponent } from './tiporeceita/tiporeceita.component';
 import { UserrecipesComponent } from './userrecipes/userrecipes.component';
 import { RecipestableComponent } from './recipestable/recipestable.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ReceitastagComponent } from './receitastag/receitastag.component';
+import { AdicionarreceitaComponent } from './adicionarreceita/adicionarreceita.component';
+import { FileUploadComponent } from './file-upload/file-upload.component';
 
 @NgModule({
   declarations: [
@@ -31,11 +33,14 @@ import { ReceitastagComponent } from './receitastag/receitastag.component';
     RecipestableComponent,
     ProfileComponent,
     ReceitastagComponent,
+    AdicionarreceitaComponent,
+    FileUploadComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

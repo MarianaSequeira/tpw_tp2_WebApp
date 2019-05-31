@@ -2,14 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f5d37d5-10c2-4785-acea-935f47fdc9d7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/app/Comentario.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/extrainfo.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/login-partial/login-partial.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/login-partial/login-partial.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/navbar/navbar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/navbar/navbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/navbar/navbar.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pesquisa/pesquisa.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pesquisa/pesquisa.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pesquisa/pesquisa.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pesquisa/pesquisa.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pitadinhas.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pitadinhas.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/receitadetails/receitadetails.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/receitadetails/receitadetails.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/receitadetails/receitadetails.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/receitadetails/receitadetails.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/userrecipes/userrecipes.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/userrecipes/userrecipes.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/userrecipes/userrecipes.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/userrecipes/userrecipes.component.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,36 +24,49 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/profile/profile.component.html">
+        <entry file="file://$PROJECT_DIR$/src/app/receitadetails/receitadetails.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-34">
-              <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+            <state>
+              <caret column="30" lean-forward="true" selection-start-column="30" selection-end-column="30" />
               <folding>
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app/userrecipes/userrecipes.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="30" lean-forward="true" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
-              <folding>
-                <element signature="n#style#0;n#i#0;n#a#0;n#p#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#1;n#div#0;n#!!top" />
+                <element signature="n#div#2;n#div#0;n#!!top" />
+                <element signature="n#div#3;n#div#0;n#!!top" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#3;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#div#4;n#div#0;n#!!top" />
+                <element signature="n#style#0;n#h5#0;n#div#4;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#div#5;n#div#0;n#!!top" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/app-routing.module.ts">
+        <entry file="file://$PROJECT_DIR$/src/app/receitadetails/receitadetails.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="20" column="22" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="22" />
+            <state relative-caret-position="321">
+              <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
               <folding>
-                <element signature="e#0#41#0" expanded="true" />
+                <element signature="e#0#50#0" expanded="true" />
+                <element signature="e#1297#1342#0" />
+                <element signature="e#1537#1582#0" />
+                <element signature="n#!!block;n#getComentarios#0;n#ReceitadetailsComponent#0" />
+                <element signature="n#!!block;n#getComentarios#1;n#ReceitadetailsComponent#0" />
+                <element signature="n#!!block;n#onSubmit#0;n#ReceitadetailsComponent#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/pitadinhas.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="104" column="32" selection-start-line="104" selection-start-column="32" selection-end-line="104" selection-end-column="32" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+                <element signature="n#!!block;n#getSearchResult#0;n#PitadinhasService#0" />
               </folding>
             </state>
           </provider>
@@ -74,6 +88,7 @@
       <find>&lt;form</find>
       <find>form</find>
       <find>dificuldade</find>
+      <find>css</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -106,27 +121,29 @@
         <option value="$PROJECT_DIR$/src/app/profile-page/profile-page.component.html" />
         <option value="$PROJECT_DIR$/src/app/profilepage/profile-page.component.html" />
         <option value="$PROJECT_DIR$/src/app/profile/profile.component.html" />
-        <option value="$PROJECT_DIR$/src/app/userrecipes/userrecipes.component.ts" />
         <option value="$PROJECT_DIR$/src/app/recipestable/recipestable.component.html" />
         <option value="$PROJECT_DIR$/src/app/Tags.ts" />
-        <option value="$PROJECT_DIR$/src/app/receitadetails/receitadetails.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/receitadetails/receitadetails.component.html" />
         <option value="$PROJECT_DIR$/src/app/receitastag/receitastag.component.html" />
         <option value="$PROJECT_DIR$/src/app/recipestable/recipestable.component.ts" />
         <option value="$PROJECT_DIR$/src/app/receitastag/receitastag.component.ts" />
         <option value="$PROJECT_DIR$/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/src/app/file-upload/file-upload.component.ts" />
         <option value="$PROJECT_DIR$/src/app/file-upload/file-upload.component.html" />
-        <option value="$PROJECT_DIR$/src/app/adicionarreceita/adicionarreceita.component.ts" />
         <option value="$PROJECT_DIR$/src/app/adicionarreceita/adicionarreceita.component.html" />
         <option value="$PROJECT_DIR$/src/app/app-routing.module.ts" />
         <option value="$PROJECT_DIR$/src/app/pesquisa/pesquisa.component.html" />
         <option value="$PROJECT_DIR$/src/app/navbar/navbar.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/pesquisa/pesquisa.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/pitadinhas.service.ts" />
         <option value="$PROJECT_DIR$/src/app/navbar/navbar.component.html" />
         <option value="$PROJECT_DIR$/src/app/login-partial/login-partial.component.html" />
         <option value="$PROJECT_DIR$/src/app/userrecipes/userrecipes.component.html" />
+        <option value="$PROJECT_DIR$/src/app/pesquisa/pesquisa.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/userrecipes/userrecipes.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/Comentario.ts" />
+        <option value="$PROJECT_DIR$/src/app/adicionarreceita/adicionarreceita.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/extrainfo.ts" />
+        <option value="$PROJECT_DIR$/src/app/receitadetails/receitadetails.component.html" />
+        <option value="$PROJECT_DIR$/src/app/pitadinhas.service.ts" />
+        <option value="$PROJECT_DIR$/src/app/receitadetails/receitadetails.component.ts" />
       </list>
     </option>
   </component>
@@ -165,7 +182,14 @@
               <item name="tpw_tp2_WebApp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="userrecipes" type="462c0819:PsiDirectoryNode" />
+              <item name="adicionarreceita" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tpw_tp2_WebApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tpw_tp2_WebApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="receitadetails" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -255,7 +279,7 @@
       <workItem from="1559201423415" duration="2568000" />
       <workItem from="1559225570557" duration="21701000" />
       <workItem from="1559290340829" duration="1104000" />
-      <workItem from="1559311256777" duration="4219000" />
+      <workItem from="1559311256777" duration="15764000" />
     </task>
     <task id="LOCAL-00001" summary="- Página inicial (InicialPageComponent, LoginPartialComponent, NavbarComponent, PortfolioComponent);">
       <created>1559049470959</created>
@@ -299,11 +323,18 @@
       <option name="project" value="LOCAL" />
       <updated>1559253224191</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="- Adição de algumas funcionalidades;">
+      <created>1559315540122</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1559315540122</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66255000" />
+    <option name="totallyTimeSpent" value="77800000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -316,21 +347,22 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23608904" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19316375" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49920508" visible="true" weight="0.3587922" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49841017" visible="true" weight="0.29307282" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3285968" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3285968" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5007949" side_tool="true" weight="0.3339254" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50158983" side_tool="true" weight="0.29307282" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.22202487" />
       <window_info anchor="bottom" id="TypeScript" order="11" weight="0.3285968" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3285968" />
@@ -348,38 +380,10 @@
     <MESSAGE value="- Adição de todas as funcionalidades s/ login;&#10;- Preparação da maioria dos componentes necessários para as funcionalidades c/ login;" />
     <MESSAGE value="- Adição do form de adição de receitas;" />
     <MESSAGE value="- Adição da pesquisa de receitas;" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Adição da pesquisa de receitas;" />
+    <MESSAGE value="- Adição de algumas funcionalidades;" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Adição de algumas funcionalidades;" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/assets/scripts/bootstrap.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/content/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-50397" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/content/all.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/initialPage/banner.component.html" />
     <entry file="file://$PROJECT_DIR$/src/app/initialpage/initialpage.component.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -419,13 +423,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/scripts/fromBlockScript.js" />
-    <entry file="file://$PROJECT_DIR$/angular.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="42" column="52" selection-start-line="42" selection-start-column="52" selection-end-line="42" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/scripts/script.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -476,13 +473,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/profilepage/profile-page.component.ts" />
     <entry file="file://$PROJECT_DIR$/src/app/profilepage/profile-page.component.html" />
-    <entry file="file://$PROJECT_DIR$/src/app/receita.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/receitastag/receitastag.component.spec.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -496,32 +486,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/receitadetails/receitadetails.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="36" column="3" lean-forward="true" selection-start-line="36" selection-start-column="3" selection-end-line="36" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/receitadetails/receitadetails.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="94" column="62" selection-start-line="94" selection-start-column="62" selection-end-line="94" selection-end-column="62" />
-          <folding>
-            <element signature="n#div#0;n#div#0;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#!!top" />
-            <element signature="n#div#2;n#div#0;n#!!top" />
-            <element signature="n#div#3;n#div#0;n#!!top" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#3;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h5#0;n#div#4;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#4;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -556,13 +520,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="17" column="62" selection-start-line="17" selection-start-column="62" selection-end-line="17" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/initialpage/initialpage.component.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -572,9 +529,6 @@
           <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/login-partial/login-partial.component.ts">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/file-upload/file-upload.component.ts">
       <provider selected="true" editor-type-id="text-editor">
@@ -593,16 +547,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/userrecipes/userrecipes.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="26" column="11" lean-forward="true" selection-start-line="26" selection-end-line="27" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/portfolio/portfolio.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -614,68 +558,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="74" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/adicionarreceita/adicionarreceita.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="145" column="72" selection-start-line="145" selection-start-column="72" selection-end-line="145" selection-end-column="94" />
-          <folding>
-            <element signature="n#div#1;n#form#0;n#div#0;n#!!top" />
-            <element signature="n#div#2;n#form#0;n#div#0;n#!!top" />
-            <element signature="n#div#3;n#form#0;n#div#0;n#!!top" />
-            <element signature="n#div#0;n#div#4;n#form#0;n#div#0;n#!!top" />
-            <element signature="n#div#1;n#div#4;n#form#0;n#div#0;n#!!top" />
-            <element signature="n#div#5;n#form#0;n#div#0;n#!!top" />
-            <element signature="n#div#6;n#form#0;n#div#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/adicionarreceita/adicionarreceita.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="80" column="4" selection-start-line="80" selection-start-column="4" selection-end-line="80" selection-end-column="41" />
-          <folding>
-            <element signature="e#888#1879#0" />
-            <element signature="n#!!block;n#goBack#0;n#AdicionarreceitaComponent#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/pesquisa/pesquisa.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="94" column="36" lean-forward="true" selection-start-line="94" selection-start-column="36" selection-end-line="94" selection-end-column="36" />
-          <folding>
-            <element signature="e#628#1619#0" />
-            <element signature="n#!!block;n#ngOnDestroy#0;n#PesquisaComponent#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/pitadinhas.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="60" column="82" lean-forward="true" selection-start-line="60" selection-start-column="82" selection-end-line="60" selection-end-column="82" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/pesquisa/pesquisa.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="15" column="75" selection-start-line="15" selection-start-column="67" selection-end-line="15" selection-end-column="75" />
-          <folding>
-            <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#668#674#0" expanded="true" />
-            <element signature="e#674#680#0" expanded="true" />
-            <element signature="e#1187#1193#0" expanded="true" />
-            <element signature="e#1193#1199#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -699,19 +581,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/login-partial/login-partial.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-          <folding>
-            <element signature="n#style#0;n#a#1;n#span#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/profile/profile.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34">
+        <state relative-caret-position="22">
           <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
           <folding>
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -721,7 +593,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/app-routing.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
+        <state relative-caret-position="175">
           <caret line="20" column="22" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="22" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
@@ -729,12 +601,181 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/pesquisa/pesquisa.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="24" column="79" selection-start-line="24" selection-start-column="79" selection-end-line="24" selection-end-column="90" />
+          <folding>
+            <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#668#674#0" expanded="true" />
+            <element signature="e#674#680#0" expanded="true" />
+            <element signature="e#1187#1193#0" expanded="true" />
+            <element signature="e#1193#1199#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/userrecipes/userrecipes.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="30" lean-forward="true" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+        <state relative-caret-position="186">
+          <caret line="36" column="55" selection-start-line="36" selection-start-column="55" selection-end-line="36" selection-end-column="55" />
           <folding>
             <element signature="n#style#0;n#i#0;n#a#0;n#p#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#180#186#0" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#form#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/pesquisa/pesquisa.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="114" selection-start-line="114" selection-end-line="114" />
+          <folding>
+            <element signature="e#628#1619#0" />
+            <element signature="n#!!block;n#ngOnDestroy#0;n#PesquisaComponent#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/userrecipes/userrecipes.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="45" column="3" lean-forward="true" selection-start-line="45" selection-start-column="3" selection-end-line="45" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/login-partial/login-partial.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="56" lean-forward="true" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="56" />
+          <folding>
+            <element signature="n#style#0;n#a#1;n#span#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Comentario.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/login-partial/login-partial.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="15" column="56" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/adicionarreceita/adicionarreceita.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34">
+          <caret line="10" column="13" lean-forward="true" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="42" />
+          <folding>
+            <element signature="n#div#1;n#form#0;n#div#0;n#!!top" />
+            <element signature="n#div#2;n#form#0;n#div#0;n#!!top" />
+            <element signature="n#div#3;n#form#0;n#div#0;n#!!top" />
+            <element signature="n#div#0;n#div#4;n#form#0;n#div#0;n#!!top" />
+            <element signature="n#div#1;n#div#4;n#form#0;n#div#0;n#!!top" />
+            <element signature="n#div#5;n#form#0;n#div#0;n#!!top" />
+            <element signature="n#div#6;n#form#0;n#div#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/adicionarreceita/adicionarreceita.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="95" column="3" lean-forward="true" selection-start-line="79" selection-start-column="2" selection-end-line="95" selection-end-column="3" />
+          <folding>
+            <element signature="e#888#1879#0" />
+            <element signature="n#!!block;n#goBack#0;n#AdicionarreceitaComponent#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="17" selection-start-line="17" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="46" lean-forward="true" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="2465" column="49" selection-start-line="2465" selection-start-column="46" selection-end-line="2465" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/receita.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/extrainfo.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/receitadetails/receitadetails.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="30" lean-forward="true" selection-start-column="30" selection-end-column="30" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#!!top" />
+            <element signature="n#div#2;n#div#0;n#!!top" />
+            <element signature="n#div#3;n#div#0;n#!!top" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#3;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#div#4;n#div#0;n#!!top" />
+            <element signature="n#style#0;n#h5#0;n#div#4;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#div#5;n#div#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/receitadetails/receitadetails.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+            <element signature="e#1297#1342#0" />
+            <element signature="e#1537#1582#0" />
+            <element signature="n#!!block;n#getComentarios#0;n#ReceitadetailsComponent#0" />
+            <element signature="n#!!block;n#getComentarios#1;n#ReceitadetailsComponent#0" />
+            <element signature="n#!!block;n#onSubmit#0;n#ReceitadetailsComponent#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/pitadinhas.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="104" column="32" selection-start-line="104" selection-start-column="32" selection-end-line="104" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+            <element signature="n#!!block;n#getSearchResult#0;n#PitadinhasService#0" />
           </folding>
         </state>
       </provider>

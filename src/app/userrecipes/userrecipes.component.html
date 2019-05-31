@@ -5,8 +5,8 @@
     </a>
   </p>
   <div *ngFor="let minhareceita of minhasReceitas">
-    <div class="row border-bottom" style="padding: 15px 10px 25px 10px; margin-top: 15px" routerLink="/receita/{{minhareceita.id}}">
-      <div class="col-sm-10 ">
+    <div class="row border-bottom" style="padding: 15px 10px 25px 10px; margin-top: 15px" >
+      <div class="col-sm-10 " routerLink="/receita/{{minhareceita.id}}">
         <div class="media">
           <img src="http://localhost:8000{{ minhareceita.imagem }}" class="align-self-center mr-3" alt="..." style="width: 15%">
           <div class="media-body">
@@ -18,7 +18,7 @@
       <div class="col-sm-2 align-self-center">
         <div>
           <button class="fas fa-edit"
-                  onclick="location.href='{% url 'updateReceita' minhareceita.id %}'"
+
                   style=" font-size: 20px;
                                             color: #2C3E50;
                                             background-color:transparent;
@@ -27,18 +27,15 @@
           </button>
         </div>
         <div>
-          <!--
-          <form id="save" action="/apagarReceita/{{ minhareceita.id }}" method="POST">
-            <button class="fas fa-trash"
+          <button class="fas fa-trash"
                     id="{{ minhareceita.id }}"
                     style=" font-size: 20px;
-                                                color: #C80000;
-                                                background-color:transparent;
-                                                border-color:transparent;
-                                                float: right;">
+                    color: #C80000;
+                    background-color:transparent;
+                    border-color:transparent;
+                    float: right;"
+                    (click)="deleteReceita(minhareceita)">
             </button>
-          </form>
-          -->
         </div>
       </div>
     </div>

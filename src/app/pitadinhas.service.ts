@@ -4,6 +4,8 @@ import {Observable} from 'rxjs';
 import {Receita} from './receita';
 import {Ingrediente} from './Ingrediente';
 import {Tags} from './Tags';
+import {Comentario} from './Comentario';
+import {Extrainfo} from './extrainfo';
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -70,5 +72,37 @@ export class PitadinhasService {
 
     console.log(url);
     return this.http.get<Receita[]>(url);
+  }
+
+  deleteReceita(receita: Receita): Observable<any> {
+    const url = this.baseUrl + 'deletereceita/' + receita.id;
+    console.log(url);
+    return this.http.delete<Receita>(url, httpOptions);
+  }
+
+  getComentariosReceita(id: number): Observable<Comentario[]> {
+    const url = this.baseUrl + 'comentariosreceita?id=' + id;
+    return this.http.get<Comentario[]>(url);
+  }
+
+  // tslint:disable-next-line:variable-name
+  postComentario(comentario: string, id_receita: number, utilizador: string): Observable<any> {
+    const url = this.baseUrl + 'comentar';
+    return this.http.post(url, {comentario, id_receita, utilizador}, httpOptions);
+  }
+
+  postSave(id: number, utilizador: string): Observable<any> {
+    const url = this.baseUrl + 'guardarreceita';
+    return this.http.post(url, {id, utilizador}, httpOptions);
+  }
+
+  postLike(id: number, utilizador: string): Observable<any> {
+    const url = this.baseUrl + 'gostarreceita';
+    return this.http.post(url, {id, utilizador}, httpOptions);
+  }
+
+  getExtraInfo(id: number): Observable<Extrainfo> {
+    const url = this.baseUrl + 'extrainfo?id=' + id;
+    return this.http.get<Extrainfo>(url);
   }
 }

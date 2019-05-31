@@ -111,4 +111,6 @@ export class PesquisaComponent implements OnInit, OnDestroy {
     this.pitadinhaService.getSearchResult(this.query, this.tagsSelected).subscribe(queryResult => this.queryResult = queryResult);
     this.tagsSelected = [];
   }
+
+
 }

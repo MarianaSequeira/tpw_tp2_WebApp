@@ -1,4 +1,35 @@
 <div class="container body-content">
+  <div *ngIf="currentUser">
+    <form id="f1" [formGroup]="comentarioForm" (ngSubmit)="onSubmitSave()">
+      <button
+        name='save'
+        id="save"
+        class="{{extrainfo.bookclass}}"
+        type="submit"
+        style=" font-size: 30px;
+                                  color: #2C3E50;
+                                  background-color:transparent;
+                                  border-color:transparent;
+                                  float: right;
+                                  margin-top: 65px;">
+      </button>
+    </form>
+    <form id="f2" [formGroup]="comentarioForm" (ngSubmit)="onSubmitLike()">
+      <button
+        name='like'
+        id="like"
+        class="{{extrainfo.likeclass}}"
+        type="submit"
+        style=" font-size: 30px;
+                                  color: #2C3E50;
+                                  background-color:transparent;
+                                  border-color:transparent;
+                                  float: right;
+                                  margin-top: 65px;">
+      </button>
+    </form>
+  </div>
+
 
   <div class="row">
     <div class="col-sm-12">
@@ -87,6 +118,40 @@
     </div>
   </div>
 
+  <div >
+    <h5 class="text-center text-uppercase text-secondary mb-0" style="margin-top: 4rem">Comentários</h5>
+    <p align="left" style="margin-top: 10px" *ngIf="currentUser">
+      <a data-toggle="modal" data-target="#comentarioModal">
+        <i class="fas fa-plus" style="font-size: 13px; color: #18bc9c;"></i>&nbsp;&nbsp;Adicionar Comentário
+      </a>
+    </p>
+
+    <div *ngIf="listComentarios">
+      <div *ngFor="let comentario of listComentarios" class="row border" style="padding: 15px 10px 10px 10px; margin-top: 18px; border-radius: 10px">
+      <div class="media">
+        <img src="../../assets/imgs/account.png" class="align-self-center mr-3" alt="..."
+             style="width: 5%"/>
+        <div class="media-body">
+          <h5 class="mt-0">{{ comentario.utilizador }}</h5>
+          <div style="font-size: 80%">
+            {{ comentario.data }}
+          </div>
+          <div style="font-size: 120%">
+            {{ comentario.comentario }}
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <p *ngIf="!listComentarios" style="margin-top: 20px">Não existem comentários nesta publicação!</p>
+
+    <div *ngIf="currentUser" align="center">
+      <button style="margin-top: 15px" type="button align" class="btn btn-outline-success1"
+              data-toggle="modal" data-target="#comentarioModal">Adicionar comentário
+      </button>
+    </div>
+  </div>
+
   <div>
     <h5 class="text-center text-uppercase text-secondary mb-0" style="margin-top: 4rem">
       Tags
@@ -94,6 +159,36 @@
 
       <a *ngFor="let tag of listTags" routerLink="/receitastag/{{tag.nome}}" style="padding-right: 5px">{{ tag.nome }}</a>
 
+  </div>
+
+
+  <!-- Modal -->
+  <div id="comentarioModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Comentário</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form class="needs-validation" id="comentario" [formGroup]="comentarioForm" (ngSubmit)="onSubmit()">
+            <div class="form-group col">
+              <label for="descricaoReceita">Comentário:</label>
+              <textarea formControlName="descricao" style="min-width: 100%; height:100px;" class="form-control"
+                        id="descricaoReceita" rows="12" required></textarea>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-outline-success1 my-2 my-sm-0" type="submit" >
+                Comentar
+              </button>
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
   </div>
 </div>
 

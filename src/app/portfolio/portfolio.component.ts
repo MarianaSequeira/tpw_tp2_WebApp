@@ -21,7 +21,6 @@ export class PortfolioComponent implements OnInit, OnDestroy {
     this.navigationSubscription = this.router.events.subscribe((e: any) => {
       if (e instanceof NavigationEnd) {
         this.staticdata = this.route.snapshot.paramMap.get('tipo');
-        this.getReceitasTipo();
       }
     });
   }

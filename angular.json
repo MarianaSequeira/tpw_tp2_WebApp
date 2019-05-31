@@ -33,11 +33,6 @@
               "src/assets/content/receita.css"
             ],
             "scripts": [
-              "src/assets/scripts/freelancer.min.js",
-              "src/assets/scripts/jquery-3.3.1.slim.min.js",
-              "src/assets/scripts/popper.min.js",
-              "src/assets/scripts/popoverAccount.js",
-              "src/assets/scripts/script.js"
             ],
             "es5BrowserSupport": true
           },

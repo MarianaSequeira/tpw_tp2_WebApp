@@ -3,6 +3,9 @@ import {ActivatedRoute} from '@angular/router';
 import {Location} from '@angular/common';
 import {PitadinhasService} from '../pitadinhas.service';
 import {Receita} from '../receita';
+import {User} from '../User';
+import {Subscription} from 'rxjs';
+import {AuthenticationService} from '../AuthenticationService';
 
 @Component({
   selector: 'app-recipestable',
@@ -11,13 +14,20 @@ import {Receita} from '../receita';
 })
 export class RecipestableComponent implements OnInit {
   @Input() staticdata: string;
+  currentUser: User;
+  currentUserSubscription: Subscription;
   receitasGuardadas: Receita[];
 
   constructor(
     private route: ActivatedRoute,
     private location: Location,
-    private pitadinhaService: PitadinhasService
-  ) { }
+    private pitadinhaService: PitadinhasService,
+    private authenticationService: AuthenticationService
+  ) {
+    this.currentUserSubscription = this.authenticationService.currentUser.subscribe(user => {
+      this.currentUser = user;
+    });
+  }
 
   ngOnInit() {
     if (this.staticdata === 'receitastag') {
@@ -29,7 +39,7 @@ export class RecipestableComponent implements OnInit {
   }
 
   getReceita(): void {
-    this.pitadinhaService.getReceitasGuardadas('luispaisalves').subscribe(receita => this.receitasGuardadas = receita);
+    this.pitadinhaService.getReceitasGuardadas(this.currentUser.username).subscribe(receita => this.receitasGuardadas = receita);
   }
 
   getReceitas(): void {

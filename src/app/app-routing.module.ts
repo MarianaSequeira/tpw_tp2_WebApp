@@ -7,6 +7,8 @@ import { TiporeceitaComponent } from './tiporeceita/tiporeceita.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ReceitastagComponent } from './receitastag/receitastag.component';
 import { AdicionarreceitaComponent } from './adicionarreceita/adicionarreceita.component';
+import {LoginComponent} from './login/login.component';
+import {AuthGuard} from './_helpers/auth.guard';
 
 
 const routes: Routes = [
@@ -14,10 +16,11 @@ const routes: Routes = [
   {path: 'receita/:id', component: ReceitadetailsComponent},
   {path: 'pesquisa/:query', component: PesquisaComponent},
   {path: 'tiporeceita/:tipo', component: TiporeceitaComponent},
-  {path: 'perfil', component: ProfileComponent},
+  {path: 'perfil', component: ProfileComponent, canActivate: [AuthGuard]},
   {path: 'receitastag/:tag', component: ReceitastagComponent},
   {path: 'criarReceita', component: AdicionarreceitaComponent},
-  {path: 'pesquisa', component: PesquisaComponent}
+  {path: 'pesquisa', component: PesquisaComponent},
+  {path: 'login', component: LoginComponent}
 ];
 
 @NgModule({

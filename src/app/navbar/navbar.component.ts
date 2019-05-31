@@ -29,7 +29,6 @@ export class NavbarComponent implements OnInit {
   }
 
   onSubmit() {
-    console.warn(this.searchForm.value.query);
     this.router.navigate(['pesquisa'], {
       state: { query: this.searchForm.value.query }
     });

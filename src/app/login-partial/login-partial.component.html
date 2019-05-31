@@ -1,7 +1,6 @@
 <span class="navbar-brand" style="margin-right: -20px" *ngIf="currentUser">
-        <a type="button" class="far fa-user" data-container="body" data-toggle="popover" data-placement="left" >
-        </a>
-  <a class="nav-item nav-link" (click)="logout()">Logout</a>
+    <a routerLink="perfil" type="button" class="far fa-user" data-container="body" data-toggle="popover" data-placement="left" ></a>
+    <a (click)="logout()" type="button" class="fas fa-sign-out-alt" data-container="body" data-toggle="popover" data-placement="left"  style="margin-left: 10px"></a>
 </span>
 
 

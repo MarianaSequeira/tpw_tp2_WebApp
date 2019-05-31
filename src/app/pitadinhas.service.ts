@@ -58,8 +58,17 @@ export class PitadinhasService {
     return this.http.post(url, receita, httpOptions);
   }
 
-  getSearchResult(query: string): Observable<Receita[]> {
-    const url = this.baseUrl + 'pesquisar?query=' + query;
+  getSearchResult(query: string, tagsSelected?: string[]): Observable<Receita[]> {
+    console.log('query service: ' + query + '... tagsSelected: ' + tagsSelected);
+
+    let url = this.baseUrl + 'pesquisar?query=' + query;
+    if (tagsSelected) {
+      for (const tag of tagsSelected) {
+        url += '&tags=' + tag;
+      }
+    }
+
+    console.log(url);
     return this.http.get<Receita[]>(url);
   }
 }

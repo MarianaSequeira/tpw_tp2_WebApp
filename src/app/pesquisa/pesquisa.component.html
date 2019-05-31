@@ -4,7 +4,7 @@
   <div *ngIf="query !== ''">
     <h2 style="padding-top: 96px" class="text-center text-uppercase text-secondary mb-0">Resultados da pesquisa '{{ query }}'</h2>
     <hr class="star-dark mb-5">
-    <!--Accordion
+    <!--Accordion-->
     <div class="panel-group" id="accordion" >
       <div class="panel panel-default" style="border:3px solid #18bc9c; border-radius: 10px; padding: 10px 10px 10px 10px;">
         <div class="panel-heading ">
@@ -13,25 +13,14 @@
           </h4>
         </div>
         <div id="collapse1" class="panel-collapse collapse in">
-          <form id="pesquisa" action="/pesquisa" method="POST" >
+          <form id="pesquisa" [formGroup]="filtroForm" (ngSubmit)="onSubmit()"  >
             <div class="form-group row">
-              {% for tag in tags %}
-              {% if tag.nome in lst_tags %}
-              <div class="col-md-3 col-sm-6">
+              <div class="col-md-3 col-sm-6" formArrayName="tags" *ngFor="let tag of filtroForm.controls.tags.controls; let i = index">
                 <div class="checkbox">
-                  <label> <input type="checkbox" name="tags" value="{{ tag.nome }}" checked>&nbsp;&nbsp;{{ tag.nome }}
+                  <label> <input [formControlName]="i" type="checkbox" value="{{ tag.nome }}" checked>&nbsp;&nbsp;{{tags[i].name}}
                   </label>
                 </div>
               </div>
-              {% else %}
-              <div class="col-md-3 col-sm-6">
-                <div class="checkbox">
-                  <label> <input type="checkbox" name="tags" value="{{ tag.nome }}">&nbsp;&nbsp;{{ tag.nome }}
-                  </label>
-                </div>
-              </div>
-              {% endif %}
-              {% endfor %}
             </div>
             <input type="hidden" class="form-control hide" name="query" value="{{ query }}">
             <button name="tags" type="submit" class="btn btn-primary">Filtrar</button>
@@ -39,7 +28,7 @@
         </div>
       </div>
     </div>
-    -->
+
 
 
     <!--Query result-->

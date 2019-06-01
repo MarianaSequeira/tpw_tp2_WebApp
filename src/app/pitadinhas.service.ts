@@ -55,9 +55,10 @@ export class PitadinhasService {
     return this.http.get<Receita[]>(url);
   }
 
-  postReceita(receita: Receita): Observable<any> {
+  postReceita(nome: string, descricao: string, preparacao: string, tipoReceita: string, nivel: string, tempo: number, dose: number, imagem: any, utilizador: string, ingredientes: any, tags: string[]): Observable<any> {
     const url = this.baseUrl + 'addreceita';
-    return this.http.post(url, receita, httpOptions);
+    console.warn(imagem)
+    return this.http.post(url, {nome, descricao, preparacao, tipoReceita, nivel, tempo, dose, imagem, utilizador, ingredientes, tags }, httpOptions);
   }
 
   getSearchResult(query: string, tagsSelected?: string[]): Observable<Receita[]> {

@@ -20,37 +20,43 @@
     </div>
 
     <!-- Ingrediente -->
-    <div>
+    <div formArrayName="ingredientes">
       <h6 align="center" style="margin-bottom: 35px; margin-top: 60px">Ora vamos lá a saber, do que vamos
         precisar?</h6>
-      <div class="row form-row form-group spacer" style="width: 100%; max-width: 100%; ">
-        <div class="col-5 form-group ">
-          <label >Ingrediente:</label>
-          <input placeholder="Nome" class="form-control" type="text" name="ing-0" id="ing-0" required>
-        </div>
-        <div class="col-3 form-group ">
-          <label >Quantidade:</label>
-          <input class="form-control" type="number" name="qt-0" step="0.5" id="qt-0" required>
-        </div>
-        <div class="col-3 form-group ">
-          <label >Unidade:</label>
-          <select class="form-control" name="un-0" id="in-0" required>
-            <option value="sem unidade">unidade(s)</option>
-            <option value="mL">mL</option>
-            <option value="L">L</option>
-            <option value="g">g</option>
-            <option value="g">kg</option>
-            <option value="chávena">chávena</option>
-            <option value="colher de sopa">c. sopa</option>
-            <option value="colher de chá">c. chá</option>
-            <option value="colher de café">c. café</option>
-            <option value="qb" selected>qb</option>
-          </select>
-        </div>
-        <div class="col-1" style="padding-left: 30px; margin-top: 30px">
-          <button class="btn btn-primary add-form-row" id="0">+</button>
+      <div *ngFor="let ingrediente of ingredientesFormGroup.controls; let i = index">
+        <div class="row form-row form-group spacer" style="width: 100%; max-width: 100%; " [formGroupName]="i">
+          <div class="col-5 form-group ">
+            <label >Ingrediente:</label>
+            <input placeholder="Nome" class="form-control" type="text" formControlName="ingrediente" required>
+          </div>
+          <div class="col-3 form-group ">
+            <label >Quantidade:</label>
+            <input class="form-control" type="number" formControlName="quantidade" step="0.5" required>
+          </div>
+          <div class="col-3 form-group ">
+            <label >Unidade:</label>
+            <select class="form-control" formControlName="unidade" required>
+              <option value="sem unidade">unidade(s)</option>
+              <option value="mL">mL</option>
+              <option value="L">L</option>
+              <option value="g">g</option>
+              <option value="g">kg</option>
+              <option value="chávena">chávena</option>
+              <option value="colher de sopa">c. sopa</option>
+              <option value="colher de chá">c. chá</option>
+              <option value="colher de café">c. café</option>
+              <option value="qb" selected>qb</option>
+            </select>
+          </div>
+          <div class="col-1" style="padding-left: 30px; margin-top: 30px">
+            <button class="btn btn-danger add-form-row" (click)="removeIngrediente(i)" >-</button>
+          </div>
         </div>
       </div>
+      <div class="col-4" style="padding-left: 30px; margin-top: 30px">
+        <button type="button" class="btn btn-info add-form-row" (click)="addIngrediente()">Adicionar Ingrediente</button>
+      </div>
+
     </div>
 
     <!-- Preparação -->

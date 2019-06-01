@@ -5,6 +5,8 @@ import {PitadinhasService} from '../pitadinhas.service';
 import {Tags} from '../Tags';
 import {FormBuilder, FormGroup, FormControl, FormArray, Validators} from '@angular/forms';
 import {Receita} from '../receita';
+import {User} from '../User';
+import {AuthenticationService} from '../AuthenticationService';
 
 @Component({
   selector: 'app-adicionarreceita',
@@ -52,13 +54,23 @@ export class AdicionarreceitaComponent implements OnInit {
     {id: 31, name: 'arroz'},
     {id: 32, name: 'sabores mediterrânicos'},
   ];
+  ingredientesList: FormArray;
+  tagsSelected = [];
+
+  currentUser: User;
+
+  get ingredientesFormGroup() {
+    return this.receitaForm.get('ingredientes') as FormArray;
+  }
 
   constructor(
     private route: ActivatedRoute,
     private location: Location,
     private pitadinhaService: PitadinhasService,
-    private formBuilder: FormBuilder
+    private authenticationService: AuthenticationService,
+    private formBuilder: FormBuilder,
   ) {
+    this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
     this.receitaForm = this.formBuilder.group({
       nomeReceita: new FormControl(''),
       descricaoReceita: new FormControl(''),
@@ -68,9 +80,10 @@ export class AdicionarreceitaComponent implements OnInit {
       tempoReceita: new FormControl(''),
       dosesReceita: new FormControl(''),
       imagemReceita: new FormControl('', [Validators.required]),
+      ingredientes: this.formBuilder.array([this.createIngrediente()]),
       tagReceita: new FormArray([])
     });
-
+    this.ingredientesList = this.receitaForm.get('ingredientes') as FormArray;
     this.addCheckboxes();
   }
 
@@ -78,21 +91,29 @@ export class AdicionarreceitaComponent implements OnInit {
   }
 
   onSubmit() {
-    console.warn(this.receitaForm.value);
-    console.warn(this.receitaForm.value.nomeReceita);
-
-    const receita = new Receita();
-
-    receita.nome = this.receitaForm.value.nomeReceita;
-    receita.descricao = this.receitaForm.value.descricaoReceita;
-    receita.preparacao = this.receitaForm.value.preparacaoReceita;
-    receita.tipo = this.receitaForm.value.tipoReceita;
-    receita.dificuldade = this.receitaForm.value.nivelReceita;
-    receita.tempo = this.receitaForm.value.tempoReceita;
-    receita.dose = this.receitaForm.value.dosesReceita;
-    receita.imagem = this.receitaForm.value.imagemReceita;
-
-    this.pitadinhaService.postReceita(receita).subscribe(() => this.goBack());
+    console.warn('submit');
+    const nome = this.receitaForm.value.nomeReceita;
+    const descricao = this.receitaForm.value.descricaoReceita;
+    const preparacao = this.receitaForm.value.preparacaoReceita;
+    const tipoReceita = this.receitaForm.value.tipoReceita;
+    const nivel = this.receitaForm.value.nivelReceita;
+    const tempo = this.receitaForm.value.tempoReceita;
+    const dose = this.receitaForm.value.dosesReceita;
+    const imagem = this.receitaForm.value.imagemReceita;
+    const ingredientes = this.receitaForm.value.ingredientes;
+    const tagsInfo = this.receitaForm.value.tagReceita;
+    // tslint:disable-next-line:no-shadowed-variable
+    for (const {item, index} of tagsInfo.map((item, index) => ({ item, index }))) {
+      if ( item === true) {
+        for (const info of this.tagReceita) {
+          if ((info.id - 1) === index) {
+            this.tagsSelected.push(info.name);
+          }
+        }
+      }
+    }
+    // tslint:disable-next-line:max-line-length
+    this.pitadinhaService.postReceita(nome, descricao, preparacao, tipoReceita, nivel, tempo, dose, imagem, this.currentUser.username, ingredientes, this.tagsSelected).subscribe(() => this.goBack());
   }
 
   addCheckboxes() {
@@ -100,6 +121,22 @@ export class AdicionarreceitaComponent implements OnInit {
       const control = new FormControl(i === 0); // if first item set to true, else false
       (this.receitaForm.controls.tagReceita as FormArray).push(control);
     });
+  }
+
+  createIngrediente(): FormGroup {
+    return this.formBuilder.group({
+      ingrediente: [null, null],
+      quantidade: [null, null],
+      unidade: ['unidade(s)', null]
+    });
+  }
+
+  addIngrediente() {
+    this.ingredientesList.push(this.createIngrediente());
+  }
+
+  removeIngrediente(index){
+    this.ingredientesList.removeAt(index);
   }
 
   goBack(): void {

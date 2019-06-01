@@ -38,4 +38,8 @@ export class AuthenticationService {
     localStorage.removeItem('currentUser');
     this.currentUserSubject.next(null);
   }
+
+  signup(username: string, password: string) {
+    return this.http.post<any>(this.baseUrl + 'signup', { username, password });
+  }
 }

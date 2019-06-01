@@ -20,6 +20,7 @@ import { AdicionarreceitaComponent } from './adicionarreceita/adicionarreceita.c
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { LoginComponent } from './login/login.component';
 import {JwtInterceptor} from './_helpers/jwt.interceptor';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import {JwtInterceptor} from './_helpers/jwt.interceptor';
     AdicionarreceitaComponent,
     FileUploadComponent,
     LoginComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,

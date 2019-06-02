@@ -2,9 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Location} from '@angular/common';
 import {PitadinhasService} from '../pitadinhas.service';
-import {Tags} from '../Tags';
 import {FormBuilder, FormGroup, FormControl, FormArray, Validators} from '@angular/forms';
-import {Receita} from '../receita';
 import {User} from '../User';
 import {AuthenticationService} from '../AuthenticationService';
 
@@ -14,10 +12,6 @@ import {AuthenticationService} from '../AuthenticationService';
   styleUrls: ['./adicionarreceita.component.css']
 })
 export class AdicionarreceitaComponent implements OnInit {
-
-  tipos: ['Sopa', 'Carne', 'Peixe', 'Acompanhamento', 'Vegetariano', 'Sobremesa', 'Massas', 'Entrada'];
-  dificuldade: ['Muito Fácil', 'Fácil', 'Médio', 'Difícil', 'Muito Difícil'];
-  unidades: ['unidade', 'mL', 'L', 'g', 'kg', 'chávena', 'c. sopa', 'c. chá', 'c. café', 'qb'];
 
   receitaForm: FormGroup;
   tagReceita = [
@@ -56,6 +50,7 @@ export class AdicionarreceitaComponent implements OnInit {
   ];
   ingredientesList: FormArray;
   tagsSelected = [];
+  valid: string;
 
   currentUser: User;
 
@@ -72,17 +67,18 @@ export class AdicionarreceitaComponent implements OnInit {
   ) {
     this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
     this.receitaForm = this.formBuilder.group({
-      nomeReceita: new FormControl(''),
-      descricaoReceita: new FormControl(''),
-      preparacaoReceita: new FormControl(''),
-      tipoReceita:  new FormControl(''),
-      nivelReceita: new FormControl(''),
-      tempoReceita: new FormControl(''),
-      dosesReceita: new FormControl(''),
+      nomeReceita: new FormControl('', [Validators.required]),
+      descricaoReceita: new FormControl('', [Validators.required]),
+      preparacaoReceita: new FormControl('', [Validators.required]),
+      tipoReceita:  new FormControl('', [Validators.required]),
+      nivelReceita: new FormControl('', [Validators.required]),
+      tempoReceita: new FormControl('', [Validators.required]),
+      dosesReceita: new FormControl('', [Validators.required]),
       imagemReceita: new FormControl('', [Validators.required]),
-      ingredientes: this.formBuilder.array([this.createIngrediente()]),
-      tagReceita: new FormArray([])
+      ingredientes: this.formBuilder.array([this.createIngrediente()], [Validators.required]),
+      tagReceita: new FormArray([], [Validators.required])
     });
+
     this.ingredientesList = this.receitaForm.get('ingredientes') as FormArray;
     this.addCheckboxes();
   }
@@ -112,9 +108,15 @@ export class AdicionarreceitaComponent implements OnInit {
         }
       }
     }
-    // tslint:disable-next-line:max-line-length
-    this.pitadinhaService.postReceita(nome, descricao, preparacao, tipoReceita, nivel, tempo, dose, imagem, this.currentUser.username, ingredientes, this.tagsSelected).subscribe(() => this.goBack());
-  }
+
+    if (this.receitaForm.valid) {
+      this.valid = null;
+      // tslint:disable-next-line:max-line-length
+      this.pitadinhaService.postReceita(nome, descricao, preparacao, tipoReceita, nivel, tempo, dose, imagem, this.currentUser.username, ingredientes, this.tagsSelected).subscribe(() => this.goBack());
+    } else {
+      this.valid = 'Formulário Inválido. Verifique os campos inseridos e certifique-se de que todos se encontram preenchidos';
+    }
+ }
 
   addCheckboxes() {
     this.tagReceita.map((o, i) => {
@@ -135,11 +137,22 @@ export class AdicionarreceitaComponent implements OnInit {
     this.ingredientesList.push(this.createIngrediente());
   }
 
-  removeIngrediente(index){
+  removeIngrediente(index): void {
     this.ingredientesList.removeAt(index);
   }
 
   goBack(): void {
     this.location.back();
   }
+
+  get nomeReceita() {return this.receitaForm.get('nomeReceita'); }
+  get descricaoReceita() {return this.receitaForm.get('descricaoReceita'); }
+  get preparacaoReceita() {return this.receitaForm.get('preparacaoReceita'); }
+  get tipoReceita() {return this.receitaForm.get('tipoReceita'); }
+  get nivelReceita() {return this.receitaForm.get('nivelReceita'); }
+  get tempoReceita() {return this.receitaForm.get('tempoReceita'); }
+  get dosesReceita() {return this.receitaForm.get('dosesReceita'); }
+  get imagemReceita() {return this.receitaForm.get('imagemReceita'); }
+  get ingredientes() {return this.receitaForm.get('ingredientes'); }
+  get tagsReceita() {return this.receitaForm.get('tagReceita'); }
 }

@@ -11,12 +11,23 @@
       <input formControlName="nomeReceita" placeholder="Nome" type="text" class="form-control" name="nome" id="nomeReceita"
              style="width: 100%; max-width: 100%" required>
     </div>
+    <div *ngIf="(nomeReceita.invalid && (nomeReceita.dirty || nomeReceita.touched)) && this.valid" class="alert alert-danger">
+      <div *ngIf="nomeReceita.errors.required">
+        Campo Obrigatório!
+      </div>
+    </div>
+
 
     <!-- Descrição -->
     <div class="form-group" style="margin-top: 60px; ">
       <h6 align="center" style="margin-bottom: 20px">E agora, que tal uma breve descrição?</h6>
       <textarea formControlName="descricaoReceita" placeholder="Descrição" class="form-control" name="descricao" id="descricaoReceita" rows="4"
                 style="width: 100%; max-width: 100%" required></textarea>
+    </div>
+    <div *ngIf="(descricaoReceita.invalid  && this.valid )" class="alert alert-danger">
+      <div *ngIf="descricaoReceita.errors.required">
+        Campo Obrigatório!
+      </div>
     </div>
 
     <!-- Ingrediente -->
@@ -53,11 +64,17 @@
           </div>
         </div>
       </div>
+      <div *ngIf="ingredientes.invalid &&  this.valid" class="alert alert-danger">
+        <div *ngIf="ingredientes.errors.required">
+          Campo Obrigatório!
+        </div>
+      </div>
       <div class="col-4" style="padding-left: 30px; margin-top: 30px">
         <button type="button" class="btn btn-info add-form-row" (click)="addIngrediente()">Adicionar Ingrediente</button>
       </div>
 
     </div>
+
 
     <!-- Preparação -->
     <div class="form-group" style="margin-top: 60px; ">
@@ -65,6 +82,11 @@
         <span style="color: #18bc9c">TIM TIM</span>, o que fazer!!</h6>
       <textarea formControlName="preparacaoReceita" placeholder="1. Exemplo" class="form-control" name="passos" id="passoReceita" rows="10"
                 style="width: 100%; max-width: 100%; " required></textarea>
+    </div>
+    <div *ngIf="preparacaoReceita.invalid && this.valid" class="alert alert-danger">
+      <div *ngIf="preparacaoReceita.errors.required">
+        Campo Obrigatório!
+      </div>
     </div>
 
     <!-- Tipo e Dificuldade -->
@@ -95,6 +117,12 @@
         <div class="radio" >
           <input formControlName="tipoReceita" type="radio" name="tipoReceita" value="Entrada" required>&nbsp;&nbsp;Entrada
         </div>
+
+        <div *ngIf="tipoReceita.invalid && this.valid" class="alert alert-danger">
+          <div *ngIf="tipoReceita.errors.required">
+            Campo Obrigatório!
+          </div>
+        </div>
       </div>
 
       <div class="form-group col-6">
@@ -114,6 +142,11 @@
         <div class="radio" >
           <input formControlName="nivelReceita" type="radio" name="nivelReceita" value="Muito Difícil" required>&nbsp;&nbsp;Muito Difícil
         </div>
+        <div *ngIf="nivelReceita.invalid && this.valid" class="alert alert-danger">
+          <div *ngIf="nivelReceita.errors.required">
+            Campo Obrigatório!
+          </div>
+        </div>
       </div>
     </div>
 
@@ -124,11 +157,21 @@
           style="color: #18bc9c">"Tempo é dinheiro"</span>.. vamos aos minutos? </h6>
         <input formControlName="tempoReceita" placeholder="Tempo(min)" style="width: 100%; max-width: 100%;" class="form-control"
                type="number" name="tempo" id="tempo" min="0" required>
+        <div *ngIf="tempoReceita.invalid &&  this.valid" class="alert alert-danger">
+          <div *ngIf="tempoReceita.errors.required">
+            Campo Obrigatório!
+          </div>
+        </div>
       </div>
       <div class="form-group col-6">
         <h6 align="center" style="margin-bottom: 20px">Quantas doses vou eu ter?</h6>
         <input formControlName="dosesReceita" placeholder="Nº Doses" style="width: 100%; max-width: 100%;" class="form-control"
                type="number" name="dose" id="dose" min="0" required>
+        <div *ngIf="dosesReceita.invalid &&  this.valid" class="alert alert-danger">
+          <div *ngIf="dosesReceita.errors.required">
+            Campo Obrigatório!
+          </div>
+        </div>
       </div>
     </div>
 
@@ -138,6 +181,11 @@
         <h6 align="center" style="margin-bottom: 20px">E como os olhos também comem.. ;) </h6>
         <!--<input formControlName="imagemReceita" type="file" class="form-control-file" name="imagem" id="imagem" required>-->
         <app-file-upload formControlName="imagemReceita" ></app-file-upload>
+      </div>
+    </div>
+    <div *ngIf="imagemReceita.invalid && this.valid" class="alert alert-danger">
+      <div *ngIf="imagemReceita.errors.required">
+        Campo Obrigatório!
       </div>
     </div>
 
@@ -154,10 +202,17 @@
           </div>
         </div>
       </div>
+      <div *ngIf="tagsReceita.invalid &&  this.valid" class="alert alert-danger">
+        <div *ngIf="tagsReceita.errors.required">
+          Campo Obrigatório!
+        </div>
+      </div>
     </div>
 
     <button type="submit" class="btn btn-primary">Adicionar</button>
-
+    <div *ngIf="valid " class="alert alert-danger" style="margin-top: 10px">
+      {{valid}}
+    </div>
 
   </form>
 

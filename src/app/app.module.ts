@@ -21,6 +21,7 @@ import { FileUploadComponent } from './file-upload/file-upload.component';
 import { LoginComponent } from './login/login.component';
 import {JwtInterceptor} from './_helpers/jwt.interceptor';
 import { SignupComponent } from './signup/signup.component';
+import { UpdatereceitaComponent } from './updatereceita/updatereceita.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { SignupComponent } from './signup/signup.component';
     FileUploadComponent,
     LoginComponent,
     SignupComponent,
+    UpdatereceitaComponent,
   ],
   imports: [
     BrowserModule,

@@ -55,10 +55,19 @@ export class PitadinhasService {
     return this.http.get<Receita[]>(url);
   }
 
+  // tslint:disable-next-line:max-line-length
   postReceita(nome: string, descricao: string, preparacao: string, tipoReceita: string, nivel: string, tempo: number, dose: number, imagem: any, utilizador: string, ingredientes: any, tags: string[]): Observable<any> {
     const url = this.baseUrl + 'addreceita';
     console.warn(imagem)
+    // tslint:disable-next-line:max-line-length
     return this.http.post(url, {nome, descricao, preparacao, tipoReceita, nivel, tempo, dose, imagem, utilizador, ingredientes, tags }, httpOptions);
+  }
+
+  // tslint:disable-next-line:max-line-length
+  updateReceita(id: number, nome: string, descricao: string, preparacao: string, tipoReceita: string, nivel: string, tempo: number, dose: number, imagem: any, utilizador: string, ingredientes: any, tags: string[]): Observable<any> {
+    const url = this.baseUrl + 'updatereceita';
+    // tslint:disable-next-line:max-line-length
+    return this.http.post(url, {id, nome, descricao, preparacao, tipoReceita, nivel, tempo, dose, imagem, utilizador, ingredientes, tags }, httpOptions);
   }
 
   getSearchResult(query: string, tagsSelected?: string[]): Observable<Receita[]> {

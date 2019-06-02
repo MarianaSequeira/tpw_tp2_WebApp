@@ -86,6 +86,7 @@ export class AdicionarreceitaComponent implements OnInit {
   ngOnInit() {
   }
 
+
   onSubmit() {
     console.warn('submit');
     const nome = this.receitaForm.value.nomeReceita;
@@ -129,7 +130,7 @@ export class AdicionarreceitaComponent implements OnInit {
     return this.formBuilder.group({
       ingrediente: [null, null],
       quantidade: [null, null],
-      unidade: ['unidade(s)', null]
+      unidade: ['sem unidade', null]
     });
   }
 

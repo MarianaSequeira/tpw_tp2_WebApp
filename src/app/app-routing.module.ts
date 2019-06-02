@@ -10,6 +10,7 @@ import { AdicionarreceitaComponent } from './adicionarreceita/adicionarreceita.c
 import {LoginComponent} from './login/login.component';
 import {AuthGuard} from './_helpers/auth.guard';
 import {SignupComponent} from './signup/signup.component';
+import {UpdatereceitaComponent} from './updatereceita/updatereceita.component';
 
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: 'receitastag/:tag', component: ReceitastagComponent},
   {path: 'criarReceita', component: AdicionarreceitaComponent},
   {path: 'pesquisa', component: PesquisaComponent},
+  {path: 'updatereceita/:id', component: UpdatereceitaComponent},
   {path: 'login', component: LoginComponent},
   {path: 'signup', component: SignupComponent}
 ];

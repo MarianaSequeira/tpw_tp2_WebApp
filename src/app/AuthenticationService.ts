@@ -6,7 +6,7 @@ import {User} from './User';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
-  private baseUrl = 'http://127.0.0.1:8000/';
+  private baseUrl = 'https://luispaisalves4.pythonanywhere.com/';
 
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;

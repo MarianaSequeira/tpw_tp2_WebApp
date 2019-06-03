@@ -16,7 +16,7 @@ const httpOptions = {
 })
 export class PitadinhasService {
 
-  private baseUrl = 'http://127.0.0.1:8000/';
+  private baseUrl = 'https://luispaisalves4.pythonanywhere.com/';
 
   constructor(private http: HttpClient) { }
 

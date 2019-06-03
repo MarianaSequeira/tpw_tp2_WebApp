@@ -1,4 +1,14 @@
 <div class="container body-content">
+  <button type="button"
+          class="fas fa-print"
+          (click)="onClickPrint()"
+          style=" font-size: 30px;
+                                  color: #2C3E50;
+                                  background-color:transparent;
+                                  border-color:transparent;
+                                  float: right;
+                                  margin-top: 65px;">
+  </button>
   <div *ngIf="currentUser">
     <form id="f1" [formGroup]="comentarioForm" (ngSubmit)="onSubmitSave()">
       <button
@@ -92,7 +102,7 @@
         <div style="padding: 5px">
           <!-- Receita.Dose -->
           <i class="fas fa-balance-scale" style="color: #18bc9c; padding-right: 5px;"></i>
-          <b>Dose:</b> {{ receita.dose }} dose(s) {{ receita.dificuldade }}
+          <b>Dose:</b> {{ receita.dose }} dose(s)
         </div>
       </div>
 

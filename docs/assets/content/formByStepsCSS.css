@@ -1,0 +1,17 @@
+ /* Style the form */
+#receita {
+  background-color: #ffffff;
+  margin: auto;
+  padding: 40px;
+  width: 80%;
+  min-width: 300px;
+}
+
+/* Style the input fields */
+
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+  background-color: #ffdddd;
+}
+

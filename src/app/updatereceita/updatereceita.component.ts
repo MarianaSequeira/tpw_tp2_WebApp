@@ -61,6 +61,7 @@ export class UpdatereceitaComponent implements OnInit {
   tagsSelected = [];
   receita: Receita;
   currentUser: User;
+  imagePath: string;
   ingredientesReceita: Ingrediente[];
 
   get ingredientesFormGroup() {
@@ -74,6 +75,7 @@ export class UpdatereceitaComponent implements OnInit {
     private authenticationService: AuthenticationService,
     private formBuilder: FormBuilder,
   ) {
+    this.imagePath = '';
     this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
     const idReceita = +this.route.snapshot.paramMap.get('id');
     this.pitadinhaService.getReceitaById(idReceita).subscribe(receita => {
@@ -125,7 +127,7 @@ export class UpdatereceitaComponent implements OnInit {
       }
     }
     // tslint:disable-next-line:max-line-length
-    this.pitadinhaService.updateReceita(id, nome, descricao, preparacao, tipoReceita, nivel, tempo, dose, imagem, this.currentUser.username, ingredientes, this.tagsSelected).subscribe(() => this.goBack());
+    this.pitadinhaService.updateReceita(id, nome, descricao, preparacao, tipoReceita, nivel, tempo, dose, this.imagePath, this.currentUser.username, ingredientes, this.tagsSelected).subscribe(() => this.goBack());
   }
 
   addCheckboxes() {
@@ -158,8 +160,24 @@ export class UpdatereceitaComponent implements OnInit {
     this.ingredientesList.removeAt(index);
   }
 
+  uploadImage(input) {
+    const self = this;
+    if (input.target.files && input.target.files[0]) {
+      const reader = new FileReader();
+      // tslint:disable-next-line:only-arrow-functions
+      reader.onload = function(e) {
+        self.imagePath = <string> (<FileReader> e.target).result;
+      }
+      reader.readAsDataURL(input.target.files[0]);
+    }
+  }
+
   goBack(): void {
     this.location.back();
+  }
+
+  get getControls() {
+    return (<any>this.receitaForm.controls.tagReceita).controls;
   }
 
 }

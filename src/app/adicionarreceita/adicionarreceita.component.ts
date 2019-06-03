@@ -51,6 +51,7 @@ export class AdicionarreceitaComponent implements OnInit {
   ingredientesList: FormArray;
   tagsSelected = [];
   valid: string;
+  imagePath : string;
 
   currentUser: User;
 
@@ -83,12 +84,17 @@ export class AdicionarreceitaComponent implements OnInit {
     this.addCheckboxes();
   }
 
+  get getControls() {
+    return (<any>this.receitaForm.controls.tagReceita).controls;
+  }
+
   ngOnInit() {
   }
 
 
   onSubmit() {
     console.warn('submit');
+    console.warn(this.imagePath);
     const nome = this.receitaForm.value.nomeReceita;
     const descricao = this.receitaForm.value.descricaoReceita;
     const preparacao = this.receitaForm.value.preparacaoReceita;
@@ -96,7 +102,6 @@ export class AdicionarreceitaComponent implements OnInit {
     const nivel = this.receitaForm.value.nivelReceita;
     const tempo = this.receitaForm.value.tempoReceita;
     const dose = this.receitaForm.value.dosesReceita;
-    const imagem = this.receitaForm.value.imagemReceita;
     const ingredientes = this.receitaForm.value.ingredientes;
     const tagsInfo = this.receitaForm.value.tagReceita;
     // tslint:disable-next-line:no-shadowed-variable
@@ -113,9 +118,21 @@ export class AdicionarreceitaComponent implements OnInit {
     if (this.receitaForm.valid) {
       this.valid = null;
       // tslint:disable-next-line:max-line-length
-      this.pitadinhaService.postReceita(nome, descricao, preparacao, tipoReceita, nivel, tempo, dose, imagem, this.currentUser.username, ingredientes, this.tagsSelected).subscribe(() => this.goBack());
+      this.pitadinhaService.postReceita(nome, descricao, preparacao, tipoReceita, nivel, tempo, dose, this.imagePath, this.currentUser.username, ingredientes, this.tagsSelected).subscribe(() => this.goBack());
     } else {
       this.valid = 'Formulário Inválido. Verifique os campos inseridos e certifique-se de que todos se encontram preenchidos';
+    }
+ }
+
+ uploadImage(input) {
+    const self = this;
+    if (input.target.files && input.target.files[0]) {
+      const reader = new FileReader();
+      // tslint:disable-next-line:only-arrow-functions
+      reader.onload = function(e) {
+        self.imagePath = <string> (<FileReader> e.target).result;
+      }
+      reader.readAsDataURL(input.target.files[0]);
     }
  }
 
@@ -129,8 +146,8 @@ export class AdicionarreceitaComponent implements OnInit {
   createIngrediente(): FormGroup {
     return this.formBuilder.group({
       ingrediente: [null, null],
-      quantidade: [null, null],
-      unidade: ['sem unidade', null]
+      quantidade: [0, null],
+      unidade: ['unidade', null]
     });
   }
 

@@ -87,6 +87,10 @@ export class ReceitadetailsComponent implements OnInit {
     this.pitadinhaService.postSave(id, this.currentUser.username).subscribe(() => this.getExtrainfo());
   }
 
+  onClickPrint() {
+    print();
+  }
+
   onSubmitLike() {
     console.warn(this.comentarioForm.value);
     const id = +this.route.snapshot.paramMap.get('id');
